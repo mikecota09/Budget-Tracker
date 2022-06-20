@@ -29,7 +29,7 @@ Deployed App: https://budget-tracker-pwamodule19.herokuapp.com/
 
 An example screenshot of the application is below.
 
-![screenshot](public\assets\images\screencapture-budget-tracker-pwamodule19-herokuapp-2022-06-20-15_52_03.png)
+![screenshot](./public/assets/images/screencapture-budget-tracker-pwamodule19-herokuapp-2022-06-20-15_52_03.png)
 
 ## Questions
 
