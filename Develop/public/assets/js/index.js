@@ -30,7 +30,7 @@ function createTransactionForm() {
     errorEl.textContent = message;
   };
 
-  // Return false in invalid
+  // Return False if Invalid
   const validate = () => {
     if (nameEl.value === "" || amountEl.value === "") {
       showError("Missing Information");
@@ -93,10 +93,10 @@ function sendTransaction(isAdding) {
     return;
   }
 
-  // Create Record
+  // Create a Record
   const transaction = transactionForm.transaction();
 
-  // Subtracting Funds
+  // Subtract Funds
   if (!isAdding) {
     transaction.value *= -1;
   }
@@ -107,7 +107,7 @@ function sendTransaction(isAdding) {
   populateTable();
   populateTotal();
 
-  // Send To Server
+  // Send to the Server
   transactionApi
     .create(transaction)
     .then((data) => {
@@ -143,6 +143,7 @@ function populateTable() {
   tbody.innerHTML = "";
 
   transactions.forEach((transaction) => {
+    // Create a new table row
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${transaction.name}</td>
@@ -157,7 +158,7 @@ function populateChart() {
   const reversed = transactions.slice().reverse();
   let sum = 0;
 
-  // Date Labels
+  // Create Date Labels
   const labels = reversed.map((t) => {
     const date = new Date(t.date);
     return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
